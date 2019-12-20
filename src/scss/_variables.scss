@@ -1,85 +1,10 @@
 @import 'custom-variables';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Josefin+Sans|Titillium+Web&display=swap');
 
-
-// ----------------------------------------
-// Table of Contents
-// ----------------------------------------
-// - direction
-// - colors
-// - helpers
-// - body
-// - header
-//   - .topbar
-//   - .topbar-link
-//   - .topbar-dropdown
-//   - .search
-//   - .nav-panel, .mobile-header
-//   - .departments
-//   - .nav-links
-//   - .indicator
-//   - .drop-search
-//   - .mobile-header
-//      - offcanvas-search
-//   - .mobilemenu
-//   - .dropcart
-//   - .menu
-//   - .megamenu
-// - footer
-// - common
-//   - headers
-//   - table
-//   - price
-//   - preloader
-//   - post-image-overlay
-// - components
-//   - .alert
-//   - .block-header
-//   - .breadcrumb
-//   - .btn (buttons.scss)
-//   - .card
-//   - .form-control (form.scss)
-//   - .input-check
-//   - .input-check-color
-//   - .input-radio
-//   - .input-radio-color
-//   - .input-radio-label
-//   - .layout-switcher
-//   - .filters-button
-//   - .modal
-//   - .nouislider
-//   - .pagination
-//   - .post-card
-//   - .product-card
-//   - .rating
-//   - .share-links
-//   - .tags
-//   - .tooltip
-//   - .typography
-// - shop
-//   - .cart
-//   - .cart-table
-//   - .category-card
-//   - .product-gallery
-//   - .product-tabs
-//   - .quickview
-//   - .wishlist
-// - other
-//   - .post
-//   - .payment-methods
-//   - .teammates
-//   - .filter
-// - blocks
-//   - .block
-//   - .block-features
-//   - .block-map
-//   - .block-products-carousel
-//   - .block-slideshow
-// - widgets
-//   - .widget-aboutus
-//   - .widget-categories
-//   - .widget-newsletter
-//   - .widget-search
-
+//persnal configs
+$font_1:'Titillium Web', sans-serif;
+$font_2:'Fira Sans', sans-serif;
+$font_3:'Josefin Sans', sans-serif;
 
 // ----------------------------------------
 // -- direction

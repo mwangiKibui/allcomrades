@@ -1,0 +1,20 @@
+
+@import '../variables';
+
+.category-card{
+    width:100%;
+    padding:10px;
+    
+    margin-left:0px;
+}
+
+.category-card--img{
+    width:100px;
+    height: 100px;
+};
+.category-card--link{
+    text-decoration:none;
+    font-family: $font-1;
+    line-height:75px;
+    color:#000;
+}

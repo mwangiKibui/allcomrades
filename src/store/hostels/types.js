@@ -1,0 +1,2 @@
+export const HOSTELS_FETCH = "HOSTELS_FETCH";
+export const HOSTEL_FETCH="HOSTEL_FETCH";

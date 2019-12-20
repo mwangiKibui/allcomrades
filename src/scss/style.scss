@@ -1,139 +1,8 @@
-/* ----------------------------------------
-
-Table of Contents:
-- Common
-  - animations
-  - base
-  - .document
-  - .fake-svg-icon
-  - .page-header
-  - .site
-- Components
-  - .account-nav
-  - .alert
-  - .badge
-  - .block-header
-  - .breadcrumb
-  - .btn
-  - .card
-  - .card-table
-  - .filters-button
-  - forms
-  - .input-check
-  - .input-check-color
-  - .input-number
-  - .input-radio
-  - .input-radio-color
-  - .input-radio-label
-  - .input-range
-  - .layout-switcher
-  - .modal
-  - .nouislider
-  - .pagination
-  - .post-card
-  - .product-card
-  - .rating
-  - .share-links
-  - .slick-prevent-click
-  - .tags
-  - .tooltip
-  - .typography
-- Filters
-  - .filter
-  - .filter-categories
-  - .filter-color
-  - .filter-list
-  - .filter-price
-- Header
-  - .departments
-  - .drop-search
-  - .dropcart
-  - .indicator
-  - .megamenu
-  - .menu
-  - .mobile-header
-  - .mobile-links
-  - .mobilemenu
-  - .nav-links
-  - .nav-panel
-  - .search
-  - .site-header
-  - .topbar
-  - .topbar-dropdown
-  - .topbar-link
-- Footer
-  - .footer-contacts
-  - .footer-links
-  - .footer-newsletter
-  - .site-footer
-- Pages
-  - .about-us
-  - .checkout
-  - .contact-us
-  - .faq
-  - .not-found
-- Shop
-  - .address-card
-  - .addresses-list
-  - .cart
-  - .cart-table
-  - .category-card
-  - .compare-table
-  - .dashboard
-  - .product
-  - .product-gallery
-  - .product-tabs
-  - .products-list
-  - .products-view
-  - .profile-card
-  - .quickview
-  - .review
-  - .reviews-list
-  - .reviews-view
-  - .shop-layout
-  - .spec
-  - .view-options
-  - .wishlist
-- Blog
-  - .comment
-  - .comments-list
-  - .post
-  - .post-author
-  - .post-header
-  - .posts-list
-  - .posts-view
-  - .related-posts
-- Blocks
-  - .block
-  - .block-banner
-  - .block-brands
-  - .block-categories
-  - .block-empty
-  - .block-features
-  - .block-map
-  - .block-posts
-  - .block-product-columns
-  - .block-products
-  - .block-products-carousel
-  - .block-sidebar
-  - .block-slideshow
-- Widgets
-  - .widget
-  - .widget-aboutus
-  - .widget-categories
-  - .widget-comments
-  - .widget-filters
-  - .widget-newsletter
-  - .widget-posts
-  - .widget-products
-  - .widget-search
-  - .widget-tags
-
----------------------------------------- */
+/* ---------------------------------------- */
 
 
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-@import '~bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -181,8 +50,11 @@ Table of Contents:
 @import 'components/tags';
 @import 'components/tooltip';
 @import 'components/typography';
-
-
+@import 'components/category-card';
+@import 'components/adverts';
+@import 'components/hostel-card';
+@import 'components/trend-card';
+@import 'components/page';
 
 /* ----------------------------------------
 // Filters
@@ -214,6 +86,7 @@ Table of Contents:
 @import 'header/topbar';
 @import 'header/topbar-dropdown';
 @import 'header/topbar-link';
+@import 'header/home';
 
 
 
@@ -295,6 +168,7 @@ Table of Contents:
 @import 'blocks/block-products-carousel';
 @import 'blocks/block-sidebar';
 @import 'blocks/block-slideshow';
+@import 'blocks/block-home';
 
 
 

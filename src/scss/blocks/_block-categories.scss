@@ -8,14 +8,16 @@
 $local-item-margin: 6px;
 
 
-.block-categories {}
+.block-categories {
+    margin-top:20px;
+}
 .block-categories__list {
     display: flex;
     flex-wrap: wrap;
     margin: -$local-item-margin;
 }
 .block-categories__item {
-    margin: $local-item-margin;
+    margin: 0px;
     width: calc(33.3333% - #{$local-item-margin * 2});
 }
 

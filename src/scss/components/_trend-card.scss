@@ -1,0 +1,18 @@
+@import '../variables';
+
+.trend-card{
+    width:100%;
+    margin:10px 0px;
+};
+.trend_card--image{
+    width:100%;
+    height:150px;
+}
+.trend_card--link{
+    color:#000;
+    text-decoration:none;
+    font-family:$font-1;
+    &:hover{
+        transition:1s ease-in-out;
+    }
+}

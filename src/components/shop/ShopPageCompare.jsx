@@ -3,7 +3,7 @@ import React from 'react';
 
 // third-party
 import classNames from 'classnames';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
@@ -12,8 +12,8 @@ import AsyncAction from '../shared/AsyncAction';
 import Currency from '../shared/Currency';
 import PageHeader from '../shared/PageHeader';
 import Rating from '../shared/Rating';
-import { cartAddItem } from '../../store/cart';
-import { compareRemoveItem } from '../../store/compare';
+// import { cartAddItem } from '../../store/cart';
+// import { compareRemoveItem } from '../../store/compare';
 
 // data stubs
 import theme from '../../data/theme';
@@ -207,16 +207,6 @@ function ShopPageCompare(props) {
     );
 }
 
-const mapStateToProps = (state) => ({
-    products: state.compare,
-});
 
-const mapDispatchToProps = {
-    cartAddItem,
-    compareRemoveItem,
-};
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(ShopPageCompare);
+export default ShopPageCompare;

@@ -7,9 +7,6 @@ import { Helmet } from 'react-helmet';
 // application
 import PageHeader from '../shared/PageHeader';
 
-// blocks
-import BlockMap from '../blocks/BlockMap';
-
 // data stubs
 import theme from '../../data/theme';
 
@@ -25,8 +22,6 @@ function SitePageContactUs() {
             <Helmet>
                 <title>{`Contact Us — ${theme.name}`}</title>
             </Helmet>
-
-            <BlockMap />
 
             <PageHeader header="Contact Us" breadcrumb={breadcrumb} />
 

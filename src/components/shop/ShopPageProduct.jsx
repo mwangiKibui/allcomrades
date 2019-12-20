@@ -11,7 +11,7 @@ import Product from '../shared/Product';
 import ProductTabs from './ProductTabs';
 
 // blocks
-import BlockProductsCarousel from '../blocks/BlockProductsCarousel';
+import Carousel from '../shared/Carousel';
 
 // widgets
 import WidgetCategories from '../widgets/WidgetCategories';
@@ -64,8 +64,7 @@ function ShopPageProduct(props) {
                             <Product product={product} layout={layout} />
                             <ProductTabs withSidebar />
                         </div>
-
-                        <BlockProductsCarousel title="Related Products" layout="grid-4-sm" products={products} withSidebar />
+                        <Carousel title="Related Products" layout="grid-4-sm" data={products} withSidebar />
                     </div>
                     {sidebarPosition === 'end' && sidebar}
                 </div>
@@ -81,7 +80,7 @@ function ShopPageProduct(props) {
                     </div>
                 </div>
 
-                <BlockProductsCarousel title="Related Products" layout="grid-5" products={products} />
+                <Carousel title="Related Products" layout="grid-5" data={products} />
             </React.Fragment>
         );
     }

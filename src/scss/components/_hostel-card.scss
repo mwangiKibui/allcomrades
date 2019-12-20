@@ -1,0 +1,53 @@
+@import '../variables';
+
+.hostel_card{
+    margin-bottom: 10px;
+};
+.ui-card{
+    width:100%;
+}
+.hostel_card--title{
+    text-decoration:none;
+    color:#000;
+    font-family: $font-1;
+    font-size:18px;
+    &:hover{
+        transition:1s ease-in-out;
+
+    }
+};
+
+//for the hostels page
+.hostel_page_content{
+    margin:20px 0px;
+}
+.hostel_slideshow_container{
+    width:100%;
+    height:354px;
+    position: relative;
+};
+.hostel_image{
+    width:100%;
+    height:100%;
+    position:relative;
+};
+.tab_features{
+    cursor:pointer;
+    font-size:16px;
+    font-family:$font-1;
+};
+.tab_description{
+    cursor:pointer;
+    font-size:16px;
+    font-family: $font-1;
+};
+
+.tab_icon span{
+    display:inline-flex;
+    justify-content:space-between;
+    font-family: $font-1;
+    font-size:17px;
+};
+.tab_icon--icon{
+    font-size:30px;
+}

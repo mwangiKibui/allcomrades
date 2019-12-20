@@ -13,6 +13,20 @@
     @include direction {
         #{$padding-inline-start}: 1.5rem;
     }
+};
+
+.flex_container{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex_container_content{
+    width:50%;
+};
+.form_redirect_link p{
+    font-family: $font-1;
 }
 .form-check-input {
     position: absolute;

@@ -13,7 +13,10 @@
     background: $nav-panel-bg;
     box-shadow: $nav-panel-shadow;
     color: $nav-panel-font-color;
-    position: relative;
+    position: fixed;
+    z-index:10;
+    width:100%;
+    top:0pz;
 }
 .mobile-header__body {
     display: flex;

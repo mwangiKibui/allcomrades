@@ -1,0 +1,1 @@
+export const CATEGORIES_FETCH = "CATEGORIES_FETCH";

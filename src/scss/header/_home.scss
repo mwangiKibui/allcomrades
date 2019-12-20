@@ -1,0 +1,27 @@
+//shall be transited later
+@import '../variables';
+
+
+$font:$font_1;
+
+.navbar{
+    color:#fff;
+    height:60px;
+    padding:40px;
+    font-family:$font;
+    z-index:10;
+};
+.navbar_logo{
+    width:50px;
+    height: 50px;
+    margin-right:10px;
+};
+.navbar-dark .navbar-nav .nav-link{
+    color:#fff;
+    transition:1s ease-in-out;
+    &:hover{
+        color:coral;
+        transition:1s ease-in-out;
+    }
+};
+

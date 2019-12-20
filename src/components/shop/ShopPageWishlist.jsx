@@ -12,7 +12,7 @@ import AsyncAction from '../shared/AsyncAction';
 import Currency from '../shared/Currency';
 import PageHeader from '../shared/PageHeader';
 import Rating from '../shared/Rating';
-import { cartAddItem } from '../../store/cart';
+// import { cartAddItem } from '../../store/cart';
 import { Cross12Svg } from '../../svg';
 import { wishlistRemoveItem } from '../../store/wishlist';
 
@@ -143,7 +143,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-    cartAddItem,
+    
     wishlistRemoveItem,
 };
 

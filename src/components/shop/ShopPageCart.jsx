@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 // third-party
 import classNames from 'classnames';
-import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +11,7 @@ import AsyncAction from '../shared/AsyncAction';
 import Currency from '../shared/Currency';
 import InputNumber from '../shared/InputNumber';
 import PageHeader from '../shared/PageHeader';
-import { cartRemoveItem, cartUpdateQuantities } from '../../store/cart';
+// import { cartRemoveItem, cartUpdateQuantities } from '../../store/cart';
 import { Cross12Svg } from '../../svg';
 
 // data stubs
@@ -290,13 +289,13 @@ class ShopPageCart extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    cart: state.cart,
-});
+// const mapStateToProps = (state) => ({
+//     cart: state.cart,
+// });
 
-const mapDispatchToProps = {
-    cartRemoveItem,
-    cartUpdateQuantities,
-};
+// const mapDispatchToProps = {
+//     cartRemoveItem,
+//     cartUpdateQuantities,
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPageCart);
+export default ShopPageCart;

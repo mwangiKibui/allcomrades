@@ -1,14 +1,14 @@
 export default {
-    name: 'Stroyka',
-    fullName: 'Stroyka - Tools Store React eCommerce Template',
-    url: 'https://themeforest.net/item/stroyka-tools-store-react-ecommerce-template/23909258',
+    name: 'allcomrades',
+    fullName: 'allcomrades platform for Karatina univervisty',
+    url: 'https://allcomrades.mwangikibui.github.io',
     author: {
-        name: 'Kos',
-        profile_url: 'https://themeforest.net/user/kos9',
+        name: 'comrades',
+        profile_url: 'https://allcomrades.mwangikibui.github.io',
     },
     contacts: {
-        address: '715 Fake Street, New York 10021 USA',
-        email: 'stroyka@example.com',
-        phone: '(800) 060-0730',
+        address: '01020 Karatina',
+        email: 'allComradesplatform@gmail.com',
+        phone: '0797662610',
     },
 };

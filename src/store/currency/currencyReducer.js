@@ -2,9 +2,9 @@ import { CURRENCY_CHANGE } from './currencyActionTypes';
 
 
 const initialState = {
-    code: 'USD',
-    symbol: '$',
-    name: 'US Dollar',
+    code: 'KES',
+    symbol: 'KSHS',
+    name: 'Kenya Shillings',
 };
 
 export default function currencyReducer(state = initialState, action) {
