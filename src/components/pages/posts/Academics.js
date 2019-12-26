@@ -20,7 +20,7 @@ const Academics = ({ loading, posts, fetchArticles }) => {
             }
         };
         load_academic_posts();
-    }, [posts]);
+    }, [posts,loading,fetchArticles]);
 
     if (pending) return (
         <div className="text-center">

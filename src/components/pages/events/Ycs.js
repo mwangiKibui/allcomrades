@@ -20,7 +20,7 @@ const Ycs = ({ loading, events, fetchEvents }) => {
             }
         };
         load_ycs_events();
-    }, [events]);
+    }, [events,loading,fetchEvents]);
 
     if (pending) return (
         <div className="text-center">

@@ -23,7 +23,7 @@ const Furniture = ({ loading, products, fetchProducts }) => {
             }
         };
         load_furniture();
-    }, [products]);
+    }, [products,loading,fetchProducts]);
 
     if (pending) return (
         <div className="text-center">

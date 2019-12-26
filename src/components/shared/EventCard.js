@@ -11,7 +11,7 @@ const EventCard = ({data,user}) => {
     return (
         <div className="event-card">
         <Card style={{width:'100%'}}>
-            <img src={data.profiles[0]} className="event_card--img" />
+            <img src={data.profiles[0]} alt={data.name} className="event_card--img" />
             <Card.Content>
                 <span className="badge badge-danger">{data.type} event</span>
                 <Card.Header>

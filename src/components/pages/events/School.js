@@ -20,7 +20,7 @@ const Schools = ({ loading, events, fetchEvents }) => {
             }
         };
         load_school_events();
-    }, [events]);
+    }, [events,fetchEvents,loading]);
 
     if (pending) return (
         <div className="text-center">

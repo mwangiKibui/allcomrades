@@ -20,7 +20,7 @@ const Cu = ({ loading, events, fetchEvents }) => {
             }
         };
         load_cu_events();
-    }, [events]);
+    }, [events,loading,fetchEvents]);
 
     if (pending) return (
         <div className="text-center">

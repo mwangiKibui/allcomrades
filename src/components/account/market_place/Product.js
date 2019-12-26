@@ -7,7 +7,7 @@ import Slick from '../../shared/SlickWithPreventSwipeClick';
 import { carousel_settings as settings } from '../../../data';
 import Tabs from './Tabs';
 
-const ProductPage = ({ match, loading, products, fetchProducts }) => {
+const ProductPage = ({ match,loading,  products, fetchProducts }) => {
     const { prodId } = match.params;
     const [pending, setPending] = useState(true);
     const [_product, setProduct] = useState({});
@@ -22,7 +22,7 @@ const ProductPage = ({ match, loading, products, fetchProducts }) => {
             }
         };
         load_data();
-    }, [prodId]);
+    }, [prodId,loading,products,fetchProducts]);
 
     if (pending) return (
         <div className="text-center">

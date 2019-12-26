@@ -42,7 +42,7 @@ const PostsPage = ({match,loading,posts,fetchPosts}) => {
               }
           };
           load_data();
-    },[postId]);
+    },[postId,loading,posts,fetchPosts]);
 
     return (
         <section className="posts">

@@ -19,7 +19,7 @@ const Posts = ({ loading, posts,fetchArticles }) => {
             }
         };
         load_posts();
-    }, [posts]);
+    }, [posts,loading,fetchArticles]);
 
     if (pending) return (
         <div className="text-center">

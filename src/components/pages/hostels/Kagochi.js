@@ -20,7 +20,7 @@ const Kagochi = ({ loading, hostels, fetchHostels }) => {
             }
         };
         load_kagochi_hostels();
-    }, [hostels]);
+    }, [hostels,loading,fetchHostels]);
 
     if (pending) return (
         <div className="text-center">

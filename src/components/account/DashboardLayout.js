@@ -25,7 +25,7 @@ import MarketPlace from './market_place';
 
 const AccountLayout = ({match,location,loading,user,fetchUser}) => {
     const [pending,setPending] = useState(true);
-    const [_user,setUser] = useState({});
+    const [setUser] = useState({});
     const [redirect,setRedirect] = useState(false);
     useEffect(() => {
        const load_user = () => {
@@ -40,7 +40,7 @@ const AccountLayout = ({match,location,loading,user,fetchUser}) => {
              }
        };
        load_user();
-    },[user]);
+    },[user,loading,fetchUser,setUser]);
     const links = [
         { title: 'Dashboard', url: 'dashboard' },
         { title: 'Edit Profile', url: 'profile' },

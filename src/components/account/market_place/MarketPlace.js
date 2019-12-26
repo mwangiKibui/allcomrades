@@ -21,7 +21,7 @@ const MarketPlace = ({ products, loading, fetchProducts }) => {
             }
         };
         load_products();
-    }, [products]);
+    }, [products,loading,fetchProducts]);
 
     if (pending) return (
         <div className="text-center">

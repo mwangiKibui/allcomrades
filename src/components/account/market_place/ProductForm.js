@@ -79,8 +79,8 @@ class ProductsForm extends React.Component {
                 error: 'Fill out all the fields'
             });
             const obj = { name, price, measure_of_quantity, description, seller,type };
-            for (const elem of Object.keys(obj)) {
-                this.data.append(elem, obj[elem]);
+            for (let elem of Object.keys(obj)) {
+                return this.data.append(elem, obj[elem]);
             };
             //we can upload product
             this.setState({ loading: true });

@@ -32,7 +32,7 @@ const HostelPage = ({match,loading,hostels,fetchHostels}) => {
            }
         };
         load_data();
-    },[hostelId]);
+    },[hostelId,loading,hostels,fetchHostels]);
     let slideshow = pending ? null : (
         _hostel.profiles.map((profile,index) => (
             <div className="hostel_slideshow_container" key={index}>

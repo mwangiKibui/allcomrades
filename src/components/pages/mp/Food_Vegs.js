@@ -23,7 +23,7 @@ const FoodVegs = ({loading,products,fetchProducts}) => {
                }
         };
         load_food_vegs();
-    },[products]);
+    },[products,loading,fetchProducts]);
 
     if(pending) return (
         <div className="text-center">

@@ -23,7 +23,7 @@ const Clothing = ({ loading, products, fetchProducts }) => {
             }
         };
         load_clothing();
-    }, [products]);
+    }, [products,loading,fetchProducts]);
 
     if (pending) return (
         <div className="text-center">

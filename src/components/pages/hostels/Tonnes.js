@@ -20,7 +20,7 @@ const Tonnes = ({ loading, hostels, fetchHostels }) => {
             }
         };
         load_tonnes_hostels();
-    }, [hostels]);
+    }, [hostels,fetchHostels,loading]);
 
     if (pending) return (
         <div className="text-center">

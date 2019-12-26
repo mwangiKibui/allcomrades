@@ -32,7 +32,7 @@ const EventPage = ({ match, loading, events, fetchEvents }) => {
             }
         };
         load_data();
-    }, [eventId]);
+    }, [eventId,loading,events,fetchEvents]);
 
     if (pending) return (
         <div className="text-center">

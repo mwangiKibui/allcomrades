@@ -11,7 +11,7 @@ import { ClipLoader } from 'react-spinners';
 import { fetchTrends,getTrendsData } from '../../store/trends';
 import Carousel from '../shared/Carousel';
 
-const BlockTrends = ({ loading,fetchTrends,trends,layout }) => {
+const BlockTrends = ({ loading,fetchTrends,trends }) => {
 
     const [pending, setPending] = useState(true);
     const [_trends, setTrends] = useState([]);
@@ -24,7 +24,7 @@ const BlockTrends = ({ loading,fetchTrends,trends,layout }) => {
             }
         };
         load_trends();
-    }, [trends])
+    }, [trends,loading,fetchTrends])
     if (pending) return (
         <div className='text-center'>
             <ClipLoader size="25" color="#009933" />

@@ -20,7 +20,7 @@ const Kawanjiru = ({ loading, hostels, fetchHostels }) => {
             }
         };
         load_kawanjiru_hostels();
-    }, [hostels]);
+    }, [hostels,loading,fetchHostels]);
 
     if (pending) return (
         <div className="text-center">

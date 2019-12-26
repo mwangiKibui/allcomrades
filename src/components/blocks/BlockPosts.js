@@ -10,7 +10,7 @@ import {ClipLoader} from 'react-spinners';
 import {fetchArticles,getArticlesData} from '../../store/articles';
 import Carousel from '../shared/Carousel';
 
-const BlockPosts = ({loading,fetchArticles,posts,layout}) => {
+const BlockPosts = ({loading,fetchArticles,posts}) => {
 
         const [pending,setPending] = useState(true);
         const [_posts,setPosts] = useState([]);
@@ -23,7 +23,7 @@ const BlockPosts = ({loading,fetchArticles,posts,layout}) => {
                  }
              };
              load_posts();
-        },[loading]);
+        },[loading,fetchArticles,posts]);
 
         if(pending) return (
             <div className='text-center'>

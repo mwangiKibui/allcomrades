@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
+
 // third-party
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {ClipLoader} from 'react-spinners';
 import {Link} from 'react-router-dom';
@@ -10,7 +10,7 @@ import HostelCard from '../shared/HostelCard';
 import {fetchHostels,getHostelsData} from '../../store/hostels'
 //this shall be the layout of hostels
 
-const BlockHostels = ({loading,hostels,fetchHostels,layout}) => {
+const BlockHostels = ({loading,hostels,fetchHostels}) => {
     const [pending,setPending] = useState(true);
     const [_hostels,setHostels] = useState([]);
     let display_hostels;
@@ -24,7 +24,7 @@ const BlockHostels = ({loading,hostels,fetchHostels,layout}) => {
            }
        };
        load_hostels();
-    },[loading]);
+    },[loading,hostels,fetchHostels]);
 
     if(pending) return (
         <div className="text-center">
@@ -54,7 +54,7 @@ const BlockHostels = ({loading,hostels,fetchHostels,layout}) => {
     }
 
     return (
-        <div className={`block block-products block-products--layout--${layout}`}>
+        <div className="block-hostels">
             <div className="container">
                 <BlockHeader title={'Sorrounding Hostels'} />
 
@@ -68,16 +68,7 @@ const BlockHostels = ({loading,hostels,fetchHostels,layout}) => {
     );
 }
 
-BlockHostels.propTypes = {
-    hostels: PropTypes.array,
-    loading:PropTypes.bool,
-    layout: PropTypes.oneOf(['large-first', 'large-last']),
-};
 
-BlockHostels.defaultProps = {
-    hostels: [],
-    layout: 'large-first',
-};
 const mapStateToProps = state => ({
     loading:getHostelsData(state).loading,
     hostels:getHostelsData(state).hostels

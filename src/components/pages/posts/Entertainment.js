@@ -20,7 +20,7 @@ const Entertainment = ({ loading, posts, fetchArticles }) => {
             }
         };
         load_ent_posts();
-    }, [posts]);
+    }, [posts,loading,fetchArticles]);
 
     if (pending) return (
         <div className="text-center">

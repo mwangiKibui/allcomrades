@@ -60,12 +60,16 @@ function BlockHeader(props) {
     }
 
     return (
+        <>
         <div className="block-header">
             <h3 className="block-header__title">{title}</h3>
             <div className="block-header__divider" />
             {groupsList}
+        </div>
+        <div className="block-header__arrows">
             {arrows}
         </div>
+        </>
     );
 }
 

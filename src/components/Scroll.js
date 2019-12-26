@@ -1,6 +1,5 @@
 //for the first time i will use styled components,getting to know how to use them.
 import React from 'react';
-import {IoIosArrowUp} from 'react-icons/io';
 
 class ScrollingWrapper extends React.Component{
     constructor(props){

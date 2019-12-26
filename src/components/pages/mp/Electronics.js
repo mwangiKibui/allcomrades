@@ -23,7 +23,7 @@ const Electronics = ({ loading, products, fetchProducts }) => {
             }
         };
         load_electronics();
-    }, [products]);
+    }, [products,loading,fetchProducts]);
 
     if (pending) return (
         <div className="text-center">

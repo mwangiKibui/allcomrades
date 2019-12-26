@@ -19,7 +19,7 @@ const Hostels = ({ loading, hostels, fetchHostels }) => {
             }
         };
         load_hostels();
-    }, [hostels]);
+    }, [hostels,loading,fetchHostels]);
 
     if (pending) return (
         <div className="text-center">

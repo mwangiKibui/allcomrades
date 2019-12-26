@@ -11,7 +11,7 @@ import {ClipLoader} from 'react-spinners';
 import BlockHeader from '../shared/BlockHeader';
 import {fetchCategories,getCategoryData} from '../../store/categories';
 
-const BlockCategories = ({categories,loading,fetchCategories,layout}) =>  {
+const BlockCategories = ({categories,loading,fetchCategories}) =>  {
 
     const [pending,setPending] = useState(true);
     const [_categories,setCategories] = useState([]);
@@ -25,7 +25,7 @@ const BlockCategories = ({categories,loading,fetchCategories,layout}) =>  {
                  }
            };
            load_categories();
-    },[categories]);
+    },[categories,loading,fetchCategories]);
 
     if(pending) return (
         <div className="text-center">

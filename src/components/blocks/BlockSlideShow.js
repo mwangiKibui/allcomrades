@@ -24,7 +24,7 @@ const  BlockSlideShow = ({loading,adverts,fetchAdverts}) => {
                    }
             };
             load_adverts();
-        },[]);
+        },[loading,adverts,fetchAdverts]);
 
         if(pending) return (
             <div className="text-center">

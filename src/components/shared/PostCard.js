@@ -8,7 +8,7 @@ const  PostCard = ({data}) => {
         <div className="post_card">
             
             <Card style={{width:"100%"}}>
-                <img src={data.fields.image[0].fields.file.url} wrapped ui={false} className="post_card--image" />
+                <img src={data.fields.image[0].fields.file.url}  alt={data.fields.title} className="post_card--image" />
                 <Card.Content>
                     <Card.Header>
                     <Link to={`/platform/posts/${data.sys.id}`} className="post_card--link">

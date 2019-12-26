@@ -20,7 +20,7 @@ const Sports = ({ loading, posts, fetchArticles }) => {
             }
         };
         load_sports_posts();
-    }, [posts]);
+    }, [posts,loading,fetchArticles]);
 
     if (pending) return (
         <div className="text-center">

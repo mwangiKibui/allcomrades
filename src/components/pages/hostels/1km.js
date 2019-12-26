@@ -20,7 +20,7 @@ const Km = ({ loading, hostels, fetchHostels }) => {
             }
         };
         load_km_hostels();
-    }, [hostels]);
+    }, [hostels,loading,fetchHostels]);
 
     if (pending) return (
         <div className="text-center">

@@ -20,7 +20,7 @@ const Technology = ({ loading, posts, fetchArticles }) => {
             }
         };
         load_tech_posts();
-    }, [posts]);
+    }, [posts,loading,fetchArticles]);
 
     if (pending) return (
         <div className="text-center">

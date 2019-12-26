@@ -32,7 +32,7 @@ const ProductPage = ({ match, loading, products, fetchProducts }) => {
             }
         };
         load_data();
-    }, [prodId]);
+    }, [prodId,loading,products,fetchProducts]);
     
     if(pending) return (
         <div className="text-center">

@@ -20,7 +20,7 @@ const Events = ({loading,events,fetchEvents}) => {
             }
         };
         load_events();
-    },[events]);
+    },[events,loading,fetchEvents]);
     
     if(pending) return (
         <div className="text-center">
