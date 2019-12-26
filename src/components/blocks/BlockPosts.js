@@ -7,11 +7,7 @@ import PropTypes from 'prop-types';
 import {ClipLoader} from 'react-spinners';
 
 // application
-import BlockHeader from '../shared/BlockHeader';
-import PostCard from '../shared/PostCard';
-import SlickWithPreventSwipeClick from '../shared/SlickWithPreventSwipeClick';
 import {fetchArticles,getArticlesData} from '../../store/articles';
-import {slickSettings} from '../../data';
 import Carousel from '../shared/Carousel';
 
 const BlockPosts = ({loading,fetchArticles,posts,layout}) => {

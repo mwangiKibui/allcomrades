@@ -3282,6 +3282,21 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   margin-top: 10px;
 }
 
+.homepage_loader_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.homepage_loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 /* ----------------------------------------
 // Filters
 // ---------------------------------------- */

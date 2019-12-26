@@ -1,5 +1,5 @@
 // react
-import React, { Component } from 'react';
+import React, { useState,useEffect } from 'react';
 
 // third-party
 import PropTypes from 'prop-types';
@@ -15,41 +15,43 @@ import { connect } from 'react-redux';
 // pages
 import Layout from './Layout';
 import HomePage from './home';
+import { ScaleLoader } from 'react-spinners';
 
 
-class Root extends Component {
-    componentDidMount() {
-        setTimeout(() => {
-            const preloader = document.querySelector('.site-preloader');
+const  Root = () =>  {
+    
+    const [loading,setLoading] = useState(true);
+    useEffect(() => {
+       const set_loading = () => {
+           return setLoading(false);
+       };
+       set_loading();
+    },[]);
+    
+    if(loading) return (
+        <div className="homepage_loader_container">
+            <div className="homepage_loader">
+            <ScaleLoader height="35" color="#009933" width="4px" radius="2px" margin="2px" />
+            </div>
+        </div>
+    )
 
-            preloader.addEventListener('transitionend', (event) => {
-                if (event.propertyName === 'opacity') {
-                    preloader.parentNode.removeChild(preloader);
-                }
-            });
-            preloader.classList.add('site-preloader__fade');
-        }, 500);
-    }
-
-    render() {
-        const { locale } = this.props;
-
-        return (
-            <>
-                <BrowserRouter basename={process.env.PUBLIC_URL}>
-                    <Switch>
-                        <Route
-                            path="/"
-                            render={(props) => (
-                                <Layout {...props} headerLayout="default" homeComponent={HomePage} />
-                            )}
-                        />
-                        <Redirect to="/" />
-                    </Switch>
-                </BrowserRouter>
-            </>
-        );
-    }
+    return (
+        <>
+            <BrowserRouter>
+                <Switch>
+                    <Route
+                        path="/"
+                        render={(props) => (
+                            <Layout {...props} homeComponent={HomePage} />
+                        )}
+                    />
+                    <Redirect to="/" />
+                </Switch>
+            </BrowserRouter>
+        </>
+    );
+    
 }
 
 Root.propTypes = {
