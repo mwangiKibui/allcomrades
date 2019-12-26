@@ -15,7 +15,7 @@ const Students = ({ loading, events, fetchEvents }) => {
         const load_student_events = () => {
             fetchEvents();
             if (!loading) {
-                let _students = events.filter(type => type === "Student");
+                let _students = events.filter(event => event.type === "student");
                 setStudents(_students);
                 return setPending(false);
             }

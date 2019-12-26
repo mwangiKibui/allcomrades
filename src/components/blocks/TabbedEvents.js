@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import Carousel from '../shared/Carousel';
 import { fetchEvents,getEventsData } from '../../store/events';
 import BlockEventAdvert from './BlockEventAdvert';
+import BlockHeader from '../shared/BlockHeader';
+import EventsCard from '../shared/EventCard';
 
 class TabbedEvents extends Component {
     timeout;
@@ -80,12 +82,33 @@ class TabbedEvents extends Component {
         const {events} = this.state;
         if(events.length === 0) return <BlockEventAdvert />
         return (
-            <Carousel
-                {...this.props}
-                loading={this.state.loading}
-                data={this.state.data}
-                onGroupClick={this.handleChangeGroup}
-            />
+            <>
+            {
+                events.length >= 4 && <Carousel {...this.props} loading={this.state.loading} card="events" data={events}
+                onGroupClick={this.handleChangeGroup} />
+            }
+            {
+                events.length > 0 && events.length < 4 && (
+                    <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-sm-12 col-md-12">
+                            <BlockHeader title={'Upcoming Events'} />
+                        </div>
+                        {
+                            events.map((event,index) => (
+                                <div className="col-12 col-sm-3" key={index}>
+                                    <EventsCard data={event} />
+                                </div>
+                            ))
+                        }
+                    </div>
+                    </div>
+                )
+            }
+            {
+                events.length > 0 && <BlockEventAdvert />
+            }
+            </>
         );
     }
 };

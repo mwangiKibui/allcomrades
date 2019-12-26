@@ -1,5 +1,7 @@
 import {reducer,getEventsData} from './reducer';
-import {fetchEvents} from './actions';
+import {fetchEvent,fetchEvents,updateEventDetails,uploadEvent,AdminPastEvents,AdminEvents
+} from './actions';
 
-export {fetchEvents,getEventsData};
+export {fetchEvents,getEventsData,fetchEvent,updateEventDetails,uploadEvent
+,AdminPastEvents,AdminEvents};
 export default reducer;

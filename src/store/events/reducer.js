@@ -1,8 +1,10 @@
-import {EVENTS_FETCH} from './types';
+import {EVENTS_FETCH,EVENT_FETCH} from './types';
 
 const initialState = {
     loading:true,
-    events:[]
+    success:null,
+    events:[],
+    event:{}
 };
 
 export const reducer = (state=initialState,action) => {
@@ -11,7 +13,15 @@ export const reducer = (state=initialState,action) => {
             return {
                 ...state,
                 loading:false,
+                success:true,
                 events:action.payload
+            }
+        case EVENT_FETCH:
+            return {
+                ...state,
+                success:true,
+                loading:false,
+                event:action.payload
             }
         default:
             return {

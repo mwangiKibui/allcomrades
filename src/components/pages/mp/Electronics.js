@@ -17,7 +17,7 @@ const Electronics = ({ loading, products, fetchProducts }) => {
         const load_electronics = () => {
             fetchProducts();
             if (!loading) {
-                let _electronics = products.filter(product => product.category === "Electronics");
+                let _electronics = products.filter(product => product.type === "electronics");
                 setElectronics(_electronics);
                 return setPending(false);
             }

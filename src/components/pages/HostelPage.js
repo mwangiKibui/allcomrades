@@ -22,7 +22,10 @@ const HostelPage = ({match,loading,hostels,fetchHostels}) => {
            fetchHostels();
            if(!loading){
                let hostel = hostels.find(hostel => hostel._id === hostelId);
-               let related = hostels.filter(hostel => hostel._id !== hostelId);
+               let loc_related = hostels.filter(hos => hos.location === hostel.location && hos._id !== hostelId);
+               let others_related = hostels.filter(hos => hos.location !== hostel.location)
+
+               let related = [...loc_related,...others_related];
                setHostel(hostel);
                setRelated(related);
                return setPending(false);

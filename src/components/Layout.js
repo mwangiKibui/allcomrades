@@ -25,7 +25,9 @@ import AccountPageSignup from './account/AccountSignup';
 import HostelPage from './pages/HostelPage';
 import PostsPage from './pages/PostsPage';
 import BlogPageCategory from './blog/BlogPageCategory';
-import SitePageAboutUs from './site/SitePageAboutUs';
+import EventPage from './pages/EventPage';
+import ProductPage from './pages/ProductPage';
+import AboutUs from './pages/Aboutus';
 import PageCart from './shop/ShopPageCart';
 import PageCheckout from './shop/ShopPageCheckout';
 import PageCompare from './shop/ShopPageCompare';
@@ -79,10 +81,14 @@ function Layout(props) {
                         <Route exact path={`${match.path}`} component={homeComponent} />
                         <Route  path={`/market_place`} component={MarketPlace} />
                         <Route path={'/events'} component={Events} />
+                        
                         <Route path={`/posts`} component={Posts} />
                         <Route path={`/hostels`} component={Hostels} />
                         <Route exact path={`/platform/hostels/:hostelId`} component={HostelPage} />
+                        <Route exact path={`/platform/events/:eventId`} component={EventPage} />
+                        <Route exact path={`/platform/mp/:prodId`} component={ProductPage} />
                         <Route exact path={`/platform/posts/:postId`} component={PostsPage} />
+                        <Route exact path={`/about_us`} component={AboutUs} />
                         {/*
                         // Shop
                         */}
@@ -210,7 +216,6 @@ function Layout(props) {
                         // Site
                         */}
                         <Redirect exact from="/site" to="/site/about-us" />
-                        <Route exact path="/site/about-us" component={SitePageAboutUs} />
                         <Route exact path="/site/components" component={SitePageComponents} />
                         <Route exact path="/site/contact-us" component={SitePageContactUs} />
                         <Route exact path="/site/contact-us-alt" component={SitePageContactUsAlt} />

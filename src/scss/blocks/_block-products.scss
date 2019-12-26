@@ -10,7 +10,9 @@
 $local-product-margin: 5px;
 
 
-.block-products {}
+.block_products {
+     margin:14px 0px;
+}
 .block-products__body {
     display: flex;
 }

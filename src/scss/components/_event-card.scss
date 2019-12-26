@@ -1,0 +1,48 @@
+@import '../variables';
+
+.event-card{
+    width:100%;
+    margin:10px 0px;
+};
+.event_card--img{
+    width:100%;
+    height:150px;
+}
+.event_card--link{
+    color:#000;
+    text-decoration:none;
+    margin:7px 0px;
+    font-size:17px;
+    font-family:$font-1;
+    font-weight: lighter;
+    &:hover{
+        transition:1s ease-in-out;
+    }
+};
+.event_card--desc{
+    font-family: $font-2;
+    font-size:13px;
+};
+
+//the page also
+.event_slideshow_container{
+    width:100%;
+    height:300px;
+    position:relative;
+};
+.event_image{
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    position:absolute;
+};
+.tabs_organizer_img{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
+    margin:10px 0px;
+};
+.tabs_organizer_info{
+    margin-top:10px;
+}

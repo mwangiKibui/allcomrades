@@ -10,9 +10,6 @@ const  Header = () => {
     const [bgColor,setBgColor] = useState(false);
     const toggle =  () => setIsOpen(!isOpen);
 
-    
-
-
     const navRef = useRef();
     navRef.current = bgColor;
     useEffect(() => {

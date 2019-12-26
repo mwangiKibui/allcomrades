@@ -12,28 +12,38 @@ class DesktopSignup extends React.Component {
         phone:'',
         password:'',
         message:'',
+        loading:false,
         error:'',
         action:'create account'
     };
+    componentDidUpdate(prevProps){
+        if(this.props.error !== prevProps.error){
+            return this.setState({
+                error:this.props.error
+            })
+        }
+    }
     onChange = e => {
         return this.setState({
             [e.target.name] : e.target.value
         })
     };
-    onSubmit = e => {
+    onSubmit = async e => {
         e.preventDefault();
+        
         const {firstname,lastname,email,phone,password} = this.state;
-        const {loading,error,success,message,user_signup} = this.props;
-
+        const {success,message,user_signup} = this.props;
+        this.setState({error:''});
 
         if(!firstname || !lastname || !email || !phone || !password) return this.setState({
             error:'Fill out all the fields'
         });
         //send the data
         const data = {firstname,lastname,email,phone,password};
-        user_signup(data);
-        if(loading) this.setState({action:'loading'});
-        if(error) return this.setState({action:'create account',error});
+        this.setState({loading:true});
+        await user_signup(data).catch(console.log);
+        this.setState({loading:false});
+        if(this.state.error) return this.setState({action:'create account'});
         if(success && message) return this.setState({
            firstname:'',lastname:'',email:'',phone:'',password:'',message,error:''
         });
@@ -47,6 +57,15 @@ class DesktopSignup extends React.Component {
                 <div className="card-body">
                     <h3 className="card-title">Register</h3>
                     <form onSubmit={this.onSubmit}>
+                        <div className="form-group">
+                            {
+                                this.state.error && <p className="text-danger">
+                                    {
+                                        this.state.error
+                                    }
+                                </p>
+                            }
+                        </div>
                         <div className="form-group">
                             <label htmlFor="firstname">Firstname</label>
                             <input
@@ -108,7 +127,9 @@ class DesktopSignup extends React.Component {
                             />
                         </div>
                         <div className="form-group">
-                            <input type="submit" className="btn btn-outline-success" value={this.state.action} />
+                            <input type="submit" className="btn btn-outline-success" value={
+                                this.state.loading ? 'loading' : this.state.action
+                            } />
                         </div>
                     </form>
                     <div className="text-center form_redirect_link">

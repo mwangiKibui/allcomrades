@@ -1,17 +1,27 @@
-import { PRODUCT_FETCH } from './types';
+import { PRODUCT_FETCH,PRODUCTS_FETCH } from './types';
 
 const initialState = {
     loading:true,
-    products:[]
+    products:[],
+    success:null,
+    product:{}
 }
 
 export const reducer = (state=initialState,action) => {
     switch(action.type){
+        case PRODUCTS_FETCH:
+            return {
+                ...state,
+                success:true,
+                loading:false,
+                products:action.payload
+            }
         case PRODUCT_FETCH:
             return {
                 ...state,
                 loading:false,
-                products:action.payload
+                success:true,
+                product:action.payload
             }
         default:
             return {

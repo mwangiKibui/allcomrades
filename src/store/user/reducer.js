@@ -1,4 +1,4 @@
-import {USER_FETCH,USER_LOGIN,USER_SIGNUP,USER_LOGIN_ERROR,USER_SIGNUP_ERROR} from './types';
+import {USER_FETCH,USER_LOGIN,USER_SIGNUP,USER_LOGIN_ERROR,USER_SIGNUP_ERROR,USER_LOADING} from './types';
 
 const initialState = {
     loading:true,
@@ -10,6 +10,12 @@ const initialState = {
 
 export const reducer = (state=initialState,action) => {
     switch(action.type){
+        case USER_LOADING:
+            return {
+                ...state,
+                error:'',
+                loading:true
+            }
         case USER_FETCH:
             return {
                 ...state,
@@ -22,11 +28,13 @@ export const reducer = (state=initialState,action) => {
                 ...state,
                 loading:false,
                 success:false,
+                message:'',
                 error:action.payload
             }
         case USER_LOGIN:
             return {
                 ...state,
+
                 loading:false,
                 success:true,
                 error:'',

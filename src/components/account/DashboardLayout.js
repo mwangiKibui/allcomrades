@@ -62,7 +62,6 @@ const AccountLayout = ({match,location,loading,user,fetchUser}) => {
         );
     });
     if(redirect) return <Redirect to={`/account/login`} />
-    console.log('the user ',user);
     return (
         <React.Fragment>
             <section className="account">

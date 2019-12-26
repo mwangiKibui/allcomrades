@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import Carousel from '../shared/Carousel';
 import {fetchProducts,getMpData} from '../../store/market_place';
 import BlockMpAdvert from './BlockMpAdvert';
+import BlockHeader from '../shared/BlockHeader';
+import ProductCard from '../shared/ProductCard';
 
 class TabbedProducts extends Component {
     timeout;
@@ -67,7 +69,7 @@ class TabbedProducts extends Component {
             this.setState((state) => {
                 // this is only for demo purpose
                 const _products = state.products.filter(
-                    product => product.category === newCurrentGroup.name
+                    product => product.type === newCurrentGroup.name
                 );
                 return {
                     products: _products,
@@ -84,11 +86,32 @@ class TabbedProducts extends Component {
         if(products.length === 0) return <BlockMpAdvert />;
 
         return (
-            <Carousel
-                {...this.props}
-                {...this.state}
-                onGroupClick={this.handleChangeGroup}
-            />
+            <section className="block_products">
+                {
+                    products.length >= 4 && <Carousel {...this.props}  card="products" data={products} />
+                }
+                {
+                    products.length > 0 && products.length < 4 && (
+                        <div className="container">
+                        <div className="row">
+                            <div className="col-12 col-sm-12 col-md-12">
+                                <BlockHeader title={'Ready stock'} />
+                            </div>
+                            {
+                                products.map((product, index) => (
+                                    <div className="col-12 col-sm-3" key={index}>
+                                        <ProductCard data={product} />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                        </div>
+                    )
+                }
+            {
+                products.length > 0 && <BlockMpAdvert />
+            }
+            </section>
         );
     }
 };

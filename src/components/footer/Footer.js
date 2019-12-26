@@ -16,7 +16,6 @@ export default function Footer() {
         { title: 'Market Place', url: '/market_place' },
         { title: 'Events', url: '/events' },
         { title: 'Hostels', url: '/hostels' },
-        { title: 'Trending', url: '/trends' },
         { title: 'Blog', url: '/posts' }
     ];
 

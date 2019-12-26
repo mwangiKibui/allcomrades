@@ -1,61 +1,39 @@
 // react
 import React from 'react';
-
-// third-party
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
+import {Card} from 'semantic-ui-react';
 
+import {getUserData} from '../../store/user';
 
-const EventCard = (props) => {
-    const {
-        data: event, layout
-    } = props;
-    const containerClasses = classNames('product-card', {
-        'product-card--layout--grid product-card--size--sm': layout === 'grid-sm'
-    });
-
-    let image;
-
-    let type = <div key="sale" className="product-card__badge product-card__badge--sale">
-        {event.type}
-    </div>
-
-    if (event.profiles && event.profiles.length > 0) {
-        image = (
-            <div className="product-card__image">
-                <Link to={`/event/${event._id}`}>
-                    <img src={event.profiles[0]} alt={event.name} />
-                </Link>
-            </div>
-        );
-    }
-
+const EventCard = ({data,user}) => {
+       
     return (
-        <div className={containerClasses}>            
-            {type}
-            {image}
-            <div className="product-card__info">
-                <div className="product-card__name">
-                    <Link to={`/events/${event._id}`}>{event.name}</Link>
-                </div>
-            </div>
-            <div className="product-card__actions">
-                <div className="product-card__availability">
-                    Date:
-                    <span className="text-success">{new Date(event.date).toLocaleDateString()}</span>
-                </div>
-            </div>
+        <div className="event-card">
+        <Card style={{width:'100%'}}>
+            <img src={data.profiles[0]} className="event_card--img" />
+            <Card.Content>
+                <span className="badge badge-danger">{data.type} event</span>
+                <Card.Header>
+                    <Link to={`/platform/events/${data._id}`} className="event_card--link">{data.name}</Link>
+                </Card.Header>
+                <Card.Meta>
+                    <p className="event_card--desc">{
+                        new Date().getDate() <= new Date(data.date).getDate() ? 'Happening' : 'Happened'
+                    } {
+                        new Date().getDate() === new Date(data.date).getDate() ? 'today' : new Date(data.date).toLocaleDateString()}</p>
+                </Card.Meta>
+            </Card.Content>
+            <Card.Content extra>
+                <p className="event_card--desc">By {
+                    user['_id'] === data.organizer._id ? 'You' : data.organizer.firstname
+                }</p>
+            </Card.Content>
+        </Card>
         </div>
     );
-}
-
-EventCard.propTypes = {
-    data: PropTypes.object.isRequired,
-    layout: PropTypes.oneOf(['grid-sm', 'grid-nl', 'grid-lg', 'list', 'horizontal']),
 };
-
-EventCard.defaultProps = {
-    layout: 'grid-sm'
-};
-export default EventCard;
+const mapToProps = state => ({
+    user:getUserData(state).user
+})
+export default connect(mapToProps,null)(EventCard);

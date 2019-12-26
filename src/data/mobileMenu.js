@@ -2,7 +2,7 @@ export default [
     {
         type: 'link',
         label: 'MarketPlace',
-        url: '/market_place',
+        url: '/mp',
     },
 
     {
@@ -14,24 +14,18 @@ export default [
     {
         type: 'link',
         label: 'Hostels',
-        url: '/hostels/',        
+        url: '/hostels',        
     },
 
     {
         type: 'link',
         label: 'Blogs',
-        url: '/blogs',
-    },
-
-    {
-        type: 'link',
-        label: 'Trends',
-        url: '/trends',
+        url: '/posts',
     },
 
     {
         type: 'link',
         label: 'dashboard',
-        url: '/dashboard/'        
+        url: '/account/dashboard'        
     }
 ];

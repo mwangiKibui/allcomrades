@@ -9,18 +9,27 @@ class MobileLogin extends React.Component {
         email: '',
         password: '',
         redirect: false,
+        loading:false,
         action: 'login',
         error: ''
     };
+    componentDidUpdate(prevProps){
+        if(this.props.error !== prevProps.error){
+            return this.setState({
+                error:this.props.error
+            })
+        }
+    }
     onChange = e => {
         return this.setState({
             [e.target.name]: e.target.value
         })
     };
-    onSubmit = e => {
+    onSubmit = async e => {
         e.preventDefault();
-        const { loading, error, user_login, message, success } = this.props;
+        const { user_login, message, success } = this.props;
         const { email, password } = this.state;
+        this.setState({error:''});
         if (!email || !password) return this.setState({
             success: false,
             message: 'Fill out the fields'
@@ -29,11 +38,11 @@ class MobileLogin extends React.Component {
         let data = {
             email, password
         }
-        user_login(data);
-        if (loading) this.setState({ action: 'loading' });
-        if (error) return this.setState({ error, action: 'login' });
+        this.setState({loading:true});
+        await user_login(data).catch(console.log);
+        this.setState({loading:false});
+        if (this.state.error) return this.setState({ action: 'login' });
         if (success && message) {
-            localStorage.removeItem('user');
             localStorage.setItem('user', message);
             return this.setState({
                 email: '', password: '', redirect: true, error: ''
@@ -49,6 +58,13 @@ class MobileLogin extends React.Component {
                  <div className="card-body">
                      <h3 className="card-title">Login</h3>
                      <form onSubmit={this.onSubmit}>
+                         <div className="form-group">
+                             {
+                                 this.state.error && <p className="text-danger">
+                                     {this.state.error}
+                                 </p>
+                             }
+                         </div>
                          <div className="form-group">
                              <label htmlFor="login-email">Email address</label>
                              <input
@@ -77,7 +93,9 @@ class MobileLogin extends React.Component {
                              </small>
                          </div>
                          <div className="form-group">
-                             <input type="submit" className="btn btn-sm btn-outline-info" value={this.state.action} />
+                             <input type="submit" className="btn btn-sm btn-outline-info" value={
+                                 this.state.loading ? 'loading' : this.state.action
+                             } />
                          </div>
                      </form>
                      <div className="text-center form_redirect_link">

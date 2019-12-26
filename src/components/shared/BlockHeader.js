@@ -20,7 +20,7 @@ function BlockHeader(props) {
     } = props;
     let arrows = null;
 
-    if (data.length >= 5) {
+    if (data.length >= 4) {
         arrows = (
             <div className="block-header__arrows-list">
                 <button className="block-header__arrow block-header__arrow--left" type="button" onClick={onPrev}>
@@ -31,7 +31,9 @@ function BlockHeader(props) {
                 </button>
             </div>
         );
-    }
+    };
+
+    
 
     let groupsList;
 
